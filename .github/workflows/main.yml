@@ -15,6 +15,7 @@ jobs:
     - name: Run tests
       run: npm test
   Lint:
+    needs: Test-Multiply
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
