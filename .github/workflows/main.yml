@@ -2,6 +2,7 @@ name: Sequence CI/CD Pipeline
 on: [push]
 jobs:
   Test-Multiply:
+    needs: Lint
     runs-on: ubuntu-latest
     steps:
     - name: checkout code
@@ -15,7 +16,7 @@ jobs:
     - name: Run tests
       run: npm test
   Lint:
-    needs: Test-Multiply
+    # needs: Test-Multiply
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
